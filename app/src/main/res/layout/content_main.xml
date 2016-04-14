@@ -10,10 +10,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.hewq.linkgame.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="@drawable/room">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- 游戏主界面的自定义组件 -->
+    <com.hewq.linkgame.view.GameView
+        android:id="@+id/gameview"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+
+    <!-- 水平排列的LinearLayout -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#1e72bb"
+        android:gravity="center">
+
+        <!-- 控制游戏开始的按钮 -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/startButton"
+            android:background="@drawable/button_selector"/>
+
+        <!-- 显示游戏剩余时间的文本框 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeText"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:width="150px"
+            android:textColor="#ff9"/>
+    </LinearLayout>
 </RelativeLayout>
